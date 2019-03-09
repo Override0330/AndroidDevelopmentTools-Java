@@ -1,5 +1,15 @@
 package com.redrockwork.overrdie.httprequsethelper.httprequsethelper;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -53,12 +63,78 @@ public class NetUtil {
                 );
     }
 
-    public void execute(Request request, com.redrockwork.overrdie.httprequsethelper.httprequsethelper.Callback callback){
-        request.setCallback(callback);
-        executor.execute(request);
+    public void execute(Request request, final com.redrockwork.overrdie.httprequsethelper.httprequsethelper.Callback callback) {
+        final String url = request.getUrl();
+        final String method = request.getMethod();
+        final int readTimeout = request.getReadTimeout();
+        final int connectTimeout = request.getConnectTimeout();
+        final String key[] = request.getKey();
+        final String value[] = request.getValue();
+        final String contentType = request.getContentType();
+
+        //开始网络请求
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                String response = null;
+                HttpURLConnection connection = null;
+                try {
+                    URL mUrl = new URL(url);
+                    String data = "";
+                    connection = (HttpURLConnection) mUrl.openConnection();
+                    connection.setRequestMethod(method);
+                    connection.setReadTimeout(readTimeout);
+                    connection.setConnectTimeout(connectTimeout);
+                    if (method.equals("POST")) {
+                        for (int i = 0; i < key.length; i++) {
+                            data = data + key[i] + "=" + value[i];
+                            if (i != key.length - 1) {
+                                data = data + "&";
+                            }
+                        }
+                        byte[] sendData = data.getBytes();
+                        int length = sendData.length;
+                        connection.setRequestProperty("Content-Type", contentType);
+                        connection.setRequestProperty("Content-Length", length + "");
+                        connection.setDoOutput(true);
+                        OutputStream out = connection.getOutputStream();
+                        out.write(data.getBytes());
+                    }
+                    int responseCode = connection.getResponseCode();
+                    if (responseCode == 200) {
+                        InputStream is = connection.getInputStream();
+                        response = new JSONObject(getStringFromInputStream(is)).toString();
+                        //回调
+                        callback.onResponse(response);
+                    }
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                    callback.onFailed(e);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    callback.onFailed(e);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    callback.onFailed(e);
+                } finally {
+                    if (connection != null) {
+                        connection.disconnect();
+                    }
+                }
+            }
+        });
     }
-
-
-
+    private String getStringFromInputStream(InputStream is) throws IOException {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len = -1;
+        while ((len = is.read(buffer)) != -1) {
+            os.write(buffer, 0, len);
+        }
+        is.close();
+        String state = os.toString();
+        os.close();
+        return state;
+    }
 
 }

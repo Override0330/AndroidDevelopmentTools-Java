@@ -13,7 +13,7 @@ import java.net.URL;
 
 
 
-public class Request implements Runnable {
+public class Request {
     private String url;
     private String method;
     private int connectTimeout;
@@ -22,6 +22,38 @@ public class Request implements Runnable {
     private String [] value;
     private Callback callback;
     private String contentType;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public int getConnectTimeout() {
+        return connectTimeout;
+    }
+
+    public int getReadTimeout() {
+        return readTimeout;
+    }
+
+    public String[] getKey() {
+        return key;
+    }
+
+    public String[] getValue() {
+        return value;
+    }
+
+    public Callback getCallback() {
+        return callback;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
 
     //自定义的回调接口
     public void setCallback(Callback callback) {
@@ -96,70 +128,7 @@ public class Request implements Runnable {
 
     }
 
-    //网络请求逻辑
-    @Override
-    public void run() {
-        String response = null;
-        HttpURLConnection connection = null;
-        try{
-            URL mUrl = new URL(url);
-            String data = "";
-            connection = (HttpURLConnection) mUrl.openConnection();
-            connection.setRequestMethod(method);
-            connection.setReadTimeout(readTimeout);
-            connection.setConnectTimeout(connectTimeout);
-            if (method.equals("POST")){
-                for (int i = 0; i < key.length; i++) {
-                    data = data + key[i] + "=" + value[i];
-                    if (i != key.length - 1) {
-                        data = data + "&";
-                    }
-                }
-                byte[] sendData = data.getBytes();
-                int length = sendData.length;
-                connection.setRequestProperty("Content-Type", contentType);
-                connection.setRequestProperty("Content-Length", length + "");
-                connection.setDoOutput(true);
-                OutputStream out = connection.getOutputStream();
-                out.write(data.getBytes());
-            }
-            int responseCode = connection.getResponseCode();
-            if (responseCode ==200){
-                InputStream is = connection.getInputStream();
-                response = new JSONObject(getStringFromInputStream(is)).toString();
-                callback.onResponse(response);
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            callback.onFailed(e);
-        } catch (IOException e) {
-            e.printStackTrace();
-            callback.onFailed(e);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            callback.onFailed(e);
-        }finally {
-            if (connection !=null){
-                connection.disconnect();
-            }
-        }
-    }
 
 
-
-
-
-    private String getStringFromInputStream(InputStream is) throws IOException {
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        int len = -1;
-        while ((len = is.read(buffer)) != -1) {
-            os.write(buffer, 0, len);
-        }
-        is.close();
-        String state = os.toString();
-        os.close();
-        return state;
-    }
 }
 
