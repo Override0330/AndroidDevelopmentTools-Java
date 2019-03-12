@@ -1,3 +1,3 @@
 # AndroidDevelopmentTools
 这里存放一些自己假装封装的工具类
-这里是测试master分支和dev分支的分支合并冲突
+这句话是用来测试Git分支用的，并且等会会合并会发生冲突！
