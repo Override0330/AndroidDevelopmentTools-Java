@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         ImageLoader.with(this)
                 .from(url)
                 .cacheWith(DoubleCacheUtils.getInstance())
+                .placeHolder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_background)
                 .into(imageView);
     }
 }

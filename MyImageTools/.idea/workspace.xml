@@ -15,36 +15,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e68f4c0-ca8a-4053-90ce-c2ca06c09ab3" name="Default" comment="完善了图片加载类,加入了缓存的功能">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/ThreadPool/ThreadPoolWithDCL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/cache/DoubleCacheUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/cache/LocalCacheUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/cache/MemoryCacheUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/core/ImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/factory/ThreadPoolFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/image/FileImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/image/UrlImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/imageinterface/ImageCacheUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/imageinterface/ImageLoad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/other/MD5Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/tools/Callback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/imageinterface/Callback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/tools/ImageNetUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/tools/ImageTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/tools/MyImage.java" beforeDir="false" />
-    </list>
+    <list default="true" id="1e68f4c0-ca8a-4053-90ce-c2ca06c09ab3" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,8 +109,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="139">
+              <caret line="30" column="33" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -2496,11 +2467,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="640" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="640" />
-    <option name="height" value="649" />
+    <option name="width" value="1280" />
+    <option name="height" value="653" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -2675,23 +2645,31 @@
       <option name="project" value="LOCAL" />
       <updated>1553613870810</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完善了图片加载类,加入了缓存的功能">
+      <created>1553786449464</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553786449464</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="653" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="653" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3291367" />
+      <window_info anchor="bottom" id="Messages" weight="0.3291367" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.544964" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.38224638" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16666667" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.38129497" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5359712" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.2913669" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
@@ -3066,8 +3044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/redrockwork/overrdie/myimagetools/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="139">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="33" />
         </state>
       </provider>
     </entry>
