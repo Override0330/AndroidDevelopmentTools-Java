@@ -1,18 +1,5 @@
 package com.redrockwork.overrdie.httprequsethelper.httprequsethelper;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-
-
 public class Request {
     private String url;
     private String method;

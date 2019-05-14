@@ -6,5 +6,5 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/surface_video_player" />
+    <include layout="@layout/surface_video_player"/>
 </android.support.constraint.ConstraintLayout>

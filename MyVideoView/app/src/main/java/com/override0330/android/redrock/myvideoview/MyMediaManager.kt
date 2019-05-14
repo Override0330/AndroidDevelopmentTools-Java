@@ -14,6 +14,7 @@ import android.widget.TextView
 import java.util.*
 import kotlin.concurrent.timerTask
 import android.os.Handler
+import com.override0330.android.redrock.myvideoview.`interface`.MediaPrepare
 
 /**
  * 视频控制类
@@ -31,70 +32,53 @@ class MyMediaManager{
     private lateinit var timer: Timer
     private lateinit var parentView: LinearLayout
     private var videoHeight: Int = 0
-    lateinit var controlBar: View
-    lateinit var detailBar: View
+    private lateinit var controlBar: View
+    private lateinit var detailBar: View
+    private lateinit var prepareMethod: MediaPrepare
 
     private lateinit var onError:MediaPlayer.OnErrorListener
+
+    fun getMediaPlayer(): MediaPlayer{
+        return this.mediaPlayer
+    }
+    fun setPrepareMethod(mediaPrepare: MediaPrepare){
+        this.prepareMethod = mediaPrepare
+    }
 
     /**
      * 建造者模式
      */
-    private constructor(activity: Activity, surface: SurfaceView, textView: TextView, controlButton: ImageView, controlSeekBar: SeekBar, controlScreen: ImageView,parent: LinearLayout) {
-        this.activity = activity
-        this.surfaceView = surface
-        this.videoTitle = textView
-        this.videoControl = controlButton
-        this.videoSchedule = controlSeekBar
-        this.videoFull = controlScreen
-        this.parentView = parent
-    }
-
-    class Builder {
-        //必要参数
-        private lateinit var activity: Activity
-        private lateinit var surface: SurfaceView
-        private lateinit var parentView: LinearLayout
+    class Builder(
+            //kotlin 专属构造器√
+            // 必要参数
+            private val activity: Activity) {
         //非必要
-        private lateinit var title: TextView
-        private lateinit var controlButton: ImageView
-        private lateinit var controlSeekBar: SeekBar
-        private lateinit var controlScreen: ImageView
+        private var path: String = "实例视频路径"
+        private var url: String = "示例视频url"
 
-        constructor(activity: Activity, surface: SurfaceView, parent: LinearLayout) {
-            this.activity = activity
-            this.surface = surface
-            this.parentView = parent
-        }
-
-        public fun setTitle(textView: TextView): Builder {
-            this.title = textView
+        fun fromPath(path: String):Builder{
+            this.path = path
             return this
         }
 
-        public fun setControlButton(imageView: ImageView): Builder {
-            this.controlButton = imageView
+        fun fromUrl(url: String):Builder{
+            this.url = url
             return this
-        }
-
-        public fun setControlSeekBar(seekBar: SeekBar): Builder {
-            this.controlSeekBar = seekBar
-            return this
-        }
-
-        public fun setControlScreen(imageView: ImageView): Builder {
-            this.controlScreen = imageView
-            return this
-        }
-
-        public fun build(): MyMediaManager {
-            return MyMediaManager(activity, surface, title, controlButton, controlSeekBar, controlScreen,parentView)
         }
     }
-
+    private fun beBind(){
+        surfaceView = activity.findViewById(R.id.sv_video)
+        videoTitle = activity.findViewById(R.id.tv_title)
+        videoControl = activity.findViewById(R.id.iv_play)
+        videoSchedule = activity.findViewById(R.id.sb_play_control)
+        videoFull = activity.findViewById(R.id.screen)
+    }
     /**
-     *初始化surfaceView，视频资源，seekbar，按钮监听
+     *初始化surfaceView，视频资源，seekBar，按钮监听
      */
-    public fun init() {
+    fun init() {
+        //绑定控件变量
+        beBind()
         //初始化变量
         controlBar = videoSchedule.parent as View
         detailBar = videoTitle.parent as View

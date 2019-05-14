@@ -11,6 +11,8 @@ import com.redrockwork.overrdie.myimagetools.imageinterface.Callback;
 import com.redrockwork.overrdie.myimagetools.imageinterface.ImageCacheUtil;
 import com.redrockwork.overrdie.myimagetools.imageinterface.ImageLoad;
 
+import java.util.Collections;
+
 /**
  * 图片核心加载类
  */
@@ -18,6 +20,7 @@ public class ImageLoader {
     private Context context;
     private ImageLoad imageLoad;
     private ImageCacheUtil imageCacheUtil;
+
     //占位图默认值
     private static int placeHolder = android.support.compat.R.drawable.notification_icon_background;
     //错误图默认值
